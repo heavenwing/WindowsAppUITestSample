@@ -10,7 +10,7 @@ namespace UnitTestProject1
     public class UnitTest1 : AppSession
     {
         [TestMethod]
-        public void LoginFailed()
+        public void Test00_LoginFailed()
         {
             Thread.Sleep(TimeSpan.FromSeconds(2));
 
@@ -22,6 +22,12 @@ namespace UnitTestProject1
             Assert.IsNotNull(dialog);
 
             session.FindElementByName("OK").Click();
+        }
+
+        [TestMethod]
+        public void Test01_LoginSuccess()
+        {
+            Login();
         }
 
         [ClassInitialize]
