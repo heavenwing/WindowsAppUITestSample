@@ -67,6 +67,7 @@ namespace WindowsFormsApp1
 
         private void AppendOptionIntoSelect(HtmlElement lstItems, string item)
         {
+            if (int.TryParse(item, out int _)) return;
             var option = webBrowser1.Document.CreateElement("option");
             option.SetAttribute("value", item);
             option.InnerText = item;
